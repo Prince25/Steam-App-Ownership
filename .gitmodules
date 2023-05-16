@@ -1,0 +1,3 @@
+[submodule "node-steamcommunity"]
+	path = node-steamcommunity
+	url = https://github.com/DoctorMcKay/node-steamcommunity
