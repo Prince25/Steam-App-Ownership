@@ -4,8 +4,7 @@ Generate CSV file with number of Steam apps owned according to date.\
 CSV file can then be used to generate a chart using Excel or something else.\
 For example: https://steamcommunity.com/sharedfiles/filedetails/?id=2976479222
 
-<img src="examples/picture3.png" />
-<br>
+<img src="examples/Picture3.png" />
 
 
 ## Steps
@@ -14,7 +13,7 @@ For example: https://steamcommunity.com/sharedfiles/filedetails/?id=2976479222
     - Log in with Steam username and password
     - Authenticate with Steam Guard, if needed
     - Copy refresh token
-2. Place refresh token at [line 17 of `get_csv.js`](get_csv.js#17)
+2. Place refresh token at [line 17 of `get_csv.js`](get_csv.js#L17)
 3. Run `node get_csv.js`
     - This generates a file called `ownership_history.csv`
     - That CSV file can be used to generate a chart to your liking
