@@ -1,12 +1,12 @@
 // https://github.com/DoctorMcKay/node-steam-user
 // https://github.com/DoctorMcKay/node-steamcommunity
 
-let fs = require('fs')
-var steam_user = require('steam-user');
-var SteamCommunity = require('./node-steamcommunity/index.js');
+import fs from 'fs';
+import steam_user from 'steam-user';
+import SteamCommunity from './node-steamcommunity/index.js';
 
 
-const stream = fs.createWriteStream(`ownership_history.csv`, { "flags": `a` });
+const stream = fs.createWriteStream(`ownership_history.csv`, { "flags": `w` });
 var community = new SteamCommunity();
 var steamUser = new steam_user({
     "enablePicsCache": true,
@@ -42,7 +42,7 @@ steamUser.on(`loggedOn`, () => {
 
 
 steamUser.on('ownershipCached', () => {
-    console.log(`Ownership cached`);
+    console.log(`Ownership cached. Writing...`);
     if (!allLicenses) {
         console.error(`Failed to get licenses`);
         return;
@@ -60,4 +60,6 @@ steamUser.on('ownershipCached', () => {
     }
     
     stream.end();
+    console.log('Ownership history written to ownership_history.csv')
+    steamUser.logOff();
 })

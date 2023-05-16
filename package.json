@@ -1,11 +1,10 @@
 {
+  "type": "module",
   "scripts": {
     "start": "node get_csv.js",
-    "install": "npm install && cd node-steamcommunity && npm install"
+    "postinstall": "cd node-steamcommunity && npm install"
   },
   "dependencies": {
-    "cheerio": "^1.0.0-rc.12",
-    "request": "^2.88.2",
     "steam-session": "^1.2.2",
     "steam-user": "^4.28.3"
   }

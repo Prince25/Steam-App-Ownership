@@ -1,3 +1,6 @@
 
 # dependencies
 **/node_modules
+
+# output files
+ownership_history.csv
